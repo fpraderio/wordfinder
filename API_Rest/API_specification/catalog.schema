@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "page_delimiter": {
+      "type": "string"
+    },
+    "desciption": {
+      "type": "string"
+    }
+  },
+  "required": ["id", "name"]
+}
