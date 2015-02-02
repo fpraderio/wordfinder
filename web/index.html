@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cerca paraules</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="page-header">
+      <h1>
+      <div class="row">
+      <div class="col-md-9">
+        El cerca paraules <small>a la gaseta de Barcelona</small>
+        </div>
+        <div class="col-md-3">
+          <form role="form" id="form">
+            <div class="form-group">
+              <input type="email" class="form-control" id="word" placeholder="paraula">
+            </div>
+          </form>
+        </div>
+      </div>
+      </h1>
+    </div>
+    <div class="row">
+      <div class="col-md-4" id="documents">
+        <ul class="list-group">
+          
+        </ul>
+      </div>
+      <div class="col-md-8" id ="results">
+      
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/pdfjs/findWord.js"></script>
+
+    <script>
+    $( document ).ready(function() {
+         $('#word').keypress(function(e) {
+           var code = (e.keyCode ? e.keyCode : e.which);
+           if (code == 13) {
+              e.preventDefault();
+              e.stopPropagation();
+              find_word($('#word').val());
+           }
+        });
+    });
+    </script>
+  </body>
+</html>
