@@ -46,14 +46,25 @@
 
     <script>
     $( document ).ready(function() {
-         $('#word').keypress(function(e) {
-           var code = (e.keyCode ? e.keyCode : e.which);
-           if (code == 13) {
-              e.preventDefault();
-              e.stopPropagation();
-              find_word($('#word').val());
-           }
-        });
+      //get contains parameter
+      var word = window.location.href.split('contains=')[1];
+      if (word){
+        word = decodeURIComponent(word);
+        $('#word').val(word);
+        find_word($('#word').val());
+        console.log(word);
+      }
+      $('#word').keypress(function(e) {
+        var code = (e.keyCode ? e.keyCode : e.which);
+        if (code == 13) {
+          e.preventDefault();
+          e.stopPropagation();
+          var url = window.location.href.match(/^[^\#\?]+/)[0];  
+          url += '?contains='+ $('#word').val();
+          window.location.href = url;
+          //find_word($('#word').val());
+        }
+      });
     });
     </script>
   </body>

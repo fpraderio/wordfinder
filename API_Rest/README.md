@@ -1,0 +1,1 @@
+http://wordfinder.francescopraderio.cat/API_Rest

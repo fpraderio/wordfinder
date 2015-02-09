@@ -8,3 +8,6 @@
 .text_page {
 	display: none;
 }
+span.word_selected {
+	background-color: yellow;
+}

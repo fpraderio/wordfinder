@@ -1,5 +1,5 @@
 <?php
-    
+    header('Access-Control-Allow-Origin: *');
 	
 	require_once("Rest.inc.php");
 	
@@ -154,7 +154,7 @@
 			if(!empty($contains)){
 				$result = array();
 				foreach ($pages as $key => $value) {
-					if (strpos($value["content"],$contains) !== false){
+					if (stripos($value["content"],$contains) !== false){
 						array_push($result, $value);
 					}
 				}
