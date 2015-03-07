@@ -1,4 +1,4 @@
-var url = "http://localhost/pdf/wordfinder/API_Rest/catalogs/gasetamunicipalbarcelona/";
+var url = "http://wordfinder.francescopraderio.cat/API_Rest/catalogs/gasetamunicipalbarcelona/";
 var documents = [];
 var searching_word = "";
 

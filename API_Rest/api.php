@@ -95,7 +95,7 @@
 			if(!empty($subdirs)) {
 				$result = array();
 				foreach ($subdirs as $value) {
-				    array_push($result, strstr($value, '.', true));
+				    array_shift($result, strstr($value, '.', true));
 				}
 				$this->response($this->json($result), 200);
 
